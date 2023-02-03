@@ -13,11 +13,11 @@ public class Ejercicio2_2 {
   public static void main (String[] args) {
     Scanner s = new Scanner(System.in);
 
-    System.out.print("\nIntroduce el primer numero: ");
+    System.out.print("Introduce el primer numero: ");
     int a = s.nextInt();
     System.out.print("Introduce el segundo numero: ");
     int b = s.nextInt();
-    System.out.println("El menor es: " +T8.misFunciones.Varias.menor(a, b));
+    System.out.println("El menor es: " +Varias.menor(a, b));
 
 
   }

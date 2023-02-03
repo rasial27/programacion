@@ -13,10 +13,9 @@ public class Ejercicio3_2 {
   public static void main (String[] args) {
     Scanner s = new Scanner(System.in);
 
-    System.out.print("Ejercicio3");
-    System.out.print("\nIntroduce un numero: ");
+    System.out.print("Introduce un numero: ");
     int num = s.nextInt();
-    int signo = T8.misFunciones.Varias.dimeSigno(num);
+    int signo = Varias.dimeSigno(num);
         if (signo == -1) {
             System.out.println("El número es negativo");
         } else if (signo == 0) {

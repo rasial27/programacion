@@ -49,5 +49,9 @@ public class Varias {
     }
   }
 
+  public static int introduceDos(int a, int b) {
+    
+  }
+
 
 }

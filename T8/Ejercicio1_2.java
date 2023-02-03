@@ -16,7 +16,7 @@ public class Ejercicio1_2 {
     double num1 = s.nextDouble();
     System.out.print("Introduce el segundo numero: ");
     double num2 = s.nextDouble();
-    System.out.println("El resultado de la multiplicacion es: " +T8.misFunciones.Varias.multiplicacion(num1, num2));
+    System.out.println("El resultado de la multiplicacion es: " +Varias.multiplicacion(num1, num2));
 
   }
 
