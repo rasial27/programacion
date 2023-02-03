@@ -22,5 +22,3 @@ public class Ejercicio1_2 {
 
 }
 
-
-hola
