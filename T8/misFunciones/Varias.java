@@ -49,8 +49,66 @@ public class Varias {
     }
   }
 
-  public static int introduceDos(int a, int b) {
-    
+  public static int voltea(int num) {
+    int numVolteado;
+    numVolteado = 0;
+    int resto;
+    resto = 1;
+
+    while (num > 0) {
+      resto = num % 10;
+      numVolteado = numVolteado * 10 + resto;
+      num /= 10;
+    }
+    return numVolteado;
+  }
+
+  public static boolean esCapicua(int num) {
+    int numVolteado;
+    numVolteado = voltea(num);
+
+    if (num == numVolteado){
+      return true;
+    }
+    return false;
+  }
+
+  public static boolean esPrimo(int num){
+    int n;
+
+    for (n = 2; n < num; n++) {
+      if ((num % n) == 0){
+        return false;
+      }
+    }
+    return true;
+
+  }
+
+  public static int sigPrimo(int num){
+    num++;
+    while (!esPrimo(num)) {
+      num++;
+    }
+    return num;
+  }
+
+  public static int potencia (int b, int e) {
+    int resul = 1;
+    for(int i = 0; i < e; i++) {
+      resul *= b;
+    }
+    return resul;
+  }
+
+  public static int digitos(int num) {
+    int numDigi = 0;
+
+    while (num > 0) {
+      num /= 10;
+      numDigi++;
+    }
+    return numDigi;
   }
 
 
