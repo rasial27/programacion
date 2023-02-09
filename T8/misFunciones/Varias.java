@@ -131,5 +131,13 @@ public class Varias {
     return (double)((1 + num) / 2);
   }
 
+  public static int maxDoble(int a, int b) {
+    if (a > b) {
+      return a; 
+    } else {
+      return b;
+    }
+  }
+
 
 }
