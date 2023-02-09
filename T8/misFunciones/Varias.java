@@ -111,5 +111,25 @@ public class Varias {
     return numDigi;
   }
 
+  public static int suma1aN(int num) {
+    int suma = 0;
+    for (int i = 1; i <= num; i++){
+      suma += i;
+    }
+    return suma;
+  }
+
+  public static int producto1aN(int num) {
+    int producto = 1;
+    for (int i = 1; i <= num; i++){
+      producto *= i;
+    }
+    return producto;
+  }
+
+  public static double intermedio1aN(int num) {
+    return (double)((1 + num) / 2);
+  }
+
 
 }
