@@ -139,5 +139,31 @@ public class Varias {
     }
   }
 
+  public static void tablaMulti (int x) {
+    for (int i = 1; i < 11; i++) {
+      System.out.println(x +" X " +i +" = " +x * i);
+    }
+  }
+
+  public static void creaTriangulo( String a, int b) {
+    int planta = 1;
+    int blanco = b - 1;
+    
+    while (planta <= b) {
+      for (int i = 1; i <= blanco; i++) {
+        System.out.print(" ");
+      }
+      
+      for (int j = 1; j <= (2*planta-1); j++) {
+        System.out.print(a);
+      }
+      
+      planta++;
+      blanco--;
+      System.out.println();
+
+    }
+  }
+
 
 }
