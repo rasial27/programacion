@@ -1,4 +1,5 @@
 package T8.misFunciones;
+import java.util.Scanner;
 
 public class Varias {
   /*
@@ -164,6 +165,35 @@ public class Varias {
 
     }
   }
+
+  public static char obtenerDNI(int dni){
+    String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+    return letras.charAt(dni % 23);
+
+  }
+
+  public static int menu() {
+    Scanner s = new Scanner(System.in);
+    System.out.println("1. Circunferencia");
+    System.out.println("2. Area");
+    System.out.println("3. Volumen"); 
+    System.out.println("4. Todas"); 
+    System.out.println("5. Salir"); 
+    System.out.print("Elige una opcion: ");
+    int opcion = s.nextInt();
+    return opcion;
+
+  }
+
+  public static double pideRadio() {
+    Scanner s = new Scanner(System.in);
+    System.out.print("Introduce el radio: ");
+    double r = s.nextDouble();
+    return r;
+
+  }
+
+
 
 
 }
