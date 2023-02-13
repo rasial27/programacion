@@ -6,7 +6,7 @@
 
 */
 
-public class Ejercicio1 {
+public class Ejercicio1_T6 {
   public static void main (String[] args) {
     
     System.out.println("Lanza el dado tres veces: ");
