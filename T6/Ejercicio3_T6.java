@@ -5,7 +5,7 @@
  * @ autoria RSA
  
  */
-public class Ejercicio3 {
+public class Ejercicio3_T6 {
     public static void main (String [] args) {
       String carta = "";
       String palo = "";

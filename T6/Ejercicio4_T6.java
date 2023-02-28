@@ -6,7 +6,7 @@
 
 */
 
-public class Ejercicio4 {
+public class Ejercicio4_T6 {
   public static void main (String[] args) {
   
     System.out.print("Tus 20 numeros aleatorios son: ");
