@@ -5,7 +5,7 @@
  * @ autoria RSA
  
  */
-public class Ejercicio13 {
+public class Ejercicio13_T6 {
     public static void main(String[] args) {
   
       int dado1, dado2;

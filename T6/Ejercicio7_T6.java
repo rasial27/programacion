@@ -5,7 +5,7 @@
  * @ autoria RSA
  
  */
-public class Ejercicio7 {
+public class Ejercicio7_T6 {
     public static void main(String[] args) {
       
       int resultadoPartido;

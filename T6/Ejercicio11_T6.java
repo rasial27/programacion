@@ -5,7 +5,7 @@
  * @ autoria RSA
  
  */
-public class Ejercicio11 {
+public class Ejercicio11_T6 {
 
     public static void main(String[] args) {
       

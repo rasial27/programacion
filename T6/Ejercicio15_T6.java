@@ -5,7 +5,7 @@
  * @ autoria RSA
  
  */
-public class Ejercicio15 {
+public class Ejercicio15_T6 {
     public static void main(String[] args) {
       
       int notas = 4 * (int)(Math.random() * 7 + 1);

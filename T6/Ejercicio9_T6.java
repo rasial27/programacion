@@ -5,7 +5,7 @@
  * @ autoria RSA
  
  */
-public class Ejercicio9 {
+public class Ejercicio9_T6 {
     public static void main(String[] args) {
       int n = 0;
       int cuentaNumeros = 0;
