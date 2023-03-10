@@ -1,29 +1,15 @@
 package T9.Ejercicio3;
 
 public class Animal {
-
-  private static int animalesCreados = 0;
-  private static int comidasTotales = 0;
-
-  private int comidasRealizadas;
-
-  public Animal() {
-    this.comidasRealizadas = 0;
-
+  public void comer() {
+      System.out.println("El animal esta comiendo");
   }
 
-  public int getComidasRealizadas() {
-    return this.comidasRealizadas;
+  public void dormir() {
+      System.out.println("El animal esta durmiendo");
   }
 
-  public static int getComidasTotales() {
-    return Animal.comidasTotales;
+  public void mover() {
+      System.out.println("El animal esta moviéndose");
   }
-
-  public void come(int c) {
-    this.comidasRealizadas += c;
-    Animal.comidasTotales += c;
-  }
-  
-  
 }
