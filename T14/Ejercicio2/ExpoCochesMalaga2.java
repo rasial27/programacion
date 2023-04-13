@@ -53,6 +53,7 @@ public class ExpoCochesMalaga2 {
         } 
       } catch (Exception e) {
         System.out.println("Dato incorrecto: " + e.getMessage());
+        System.out.println("Dato incorrecto: " + e.getClass());
       }
     } while (opcion < 3); // menú principal
 
