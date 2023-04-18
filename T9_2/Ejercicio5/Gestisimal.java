@@ -1,8 +1,6 @@
 package T9_2.Ejercicio5;
 import java.util.Scanner;
 
-import javax.sound.midi.SysexMessage;
-
 public class Gestisimal {
   static Scanner s = new Scanner(System.in);
   static Articulo[] listaArticulos = new Articulo[100];
