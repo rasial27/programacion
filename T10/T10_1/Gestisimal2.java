@@ -1,6 +1,6 @@
 
 /*
- * Gestisimal.java
+ * Gestisimal2.java
  * Crea un menu y utiliza un arraylist para guardar los datos
  * 
  * @author RSA
