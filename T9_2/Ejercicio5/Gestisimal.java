@@ -1,15 +1,23 @@
+/*
+ * Gestisimal.java
+ * Crea un menu y utiliza un arraylist para guardar los datos
+ * 
+ * @author RSA
+ */
+
 package T9_2.Ejercicio5;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Gestisimal {
   static Scanner s = new Scanner(System.in);
-  static Articulo[] listaArticulos = new Articulo[100];
-  static int numArticulos = 0;
+  static ArrayList<Articulo> listaArticulos = new ArrayList<Articulo>(); //creacion del arraylist
+  
 
   public static void main(String[] args) {
     int opcion;
 
-    do {
+    do { //bucle para seleccionar en el menu
       System.out.println("MENU");
       System.out.println("1. Listado");
       System.out.println("2. Alta");
@@ -17,7 +25,7 @@ public class Gestisimal {
       System.out.println("4. Modificacion");
       System.out.println("5. Entrada de mercancia");
       System.out.println("6. Salida de mercancia");
-      System.out.println("7.Salir");
+      System.out.println("7. Salir");
       System.out.print("\nElige una opcion: ");
       opcion = s.nextInt();
 
@@ -50,19 +58,19 @@ public class Gestisimal {
     } while (opcion!= 7);
   }
 
-  static void listarArticulos() {
-    if (numArticulos == 0) {
+  static void listarArticulos() { //metodo para listar la lista de los articulos
+    if (listaArticulos.size() == 0) {
       System.out.println("\nNo hay articulos en el almacen");
     } else {
       System.out.println("\nLista de articulos");
-      for (int i = 0; i < numArticulos; i++) {
-        System.out.println(listaArticulos[i]);
+      for (Articulo articulo : listaArticulos) {
+        System.out.println(articulo);
       }
     }
   }
   
-  static void altaArticulos() {
-    if (numArticulos == 100) {
+  static void altaArticulos() { //metodo para  introducir ariculos
+    if (listaArticulos.size() == 100) {
       System.out.println("\nNo se pueden agregar mas articulos");
     } else {
       System.out.println("\nAlta de articulos");
@@ -77,26 +85,23 @@ public class Gestisimal {
       System.out.print("Stock: ");
       int stock = s.nextInt();
 
-      listaArticulos[numArticulos] = new Articulo(codigo, descripcion, precioCompra, precioVenta, stock);
-      numArticulos++;
+      Articulo articulo = new Articulo(codigo, descripcion, precioCompra, precioVenta, stock);
+      listaArticulos.add(articulo);
 
       System.out.println("\nArticulo agregado correctamente");
     }
   }
 
-  static void bajaArticulos() {
+  static void bajaArticulos() { //metodo para quitar un articulo
     System.out.print("\nBaja de articulos");
     System.out.print("Introduce el codigo del articulo que va a eliminar: ");
     String codigo = s.next();
 
     boolean encontrado = false;
 
-    for (int i = 0; i < numArticulos; i++) {
-      if (listaArticulos[i].getCodigo().equals(codigo)) {
-        for (int j = i; j < numArticulos - 1; j++) {
-          listaArticulos[j] = listaArticulos[j+1];
-        }
-        numArticulos--;
+    for (int i = 0; i < listaArticulos.size(); i++) {
+      if (listaArticulos.get(i).getCodigo().equals(codigo)) {
+        listaArticulos.remove(i);
         encontrado = true;
         System.out.println("\nArticulo eliminado correctamente");
         break;
@@ -108,46 +113,41 @@ public class Gestisimal {
     }
   }
 
-  static void modificarArticulos() {
+  static void modificarArticulos() { //metodo para modificar los datos de un articulo
     System.out.println("\nModificacion de articulos");
     System.out.print("Introduce el codigo del articulo que va a modificar: ");
     String codigo = s.next();
 
     boolean encontrado = false;
 
-    for(int i = 0; i < numArticulos; i++) {
-      if (listaArticulos[i].getCodigo().equals(codigo)) {
-        System.out.println("\nIntroduce los nuevos datos del articulo:");
-        System.out.print("Descripcion (" + listaArticulos[i].getDescripcion() + "): ");
-        String descripcion = s.next();
-        if(!descripcion.isEmpty()) {
-          listaArticulos[i].setDescripcion(descripcion);
-        }
-
-        System.out.print("Precio de compra (" + listaArticulos[i].getPrecioCompra() +"): ");
-        String sPrecioCompra = s.next();
-        if (!sPrecioCompra.isEmpty()) {
-          double precioCompra = s.nextDouble();
-          listaArticulos[i].setPrecioCompra(precioCompra);
-        }
-
-        System.out.print("Precio de venta (" + listaArticulos[i].getPrecioVenta() + "): ");
-        String sPrecioVenta = s.next();
-        if (!sPrecioVenta.isEmpty()) {
-          double precioVenta = s.nextDouble();
-          listaArticulos[i].setPrecioVenta(precioVenta);
-        }
-
-        System.out.print("Stock (" + listaArticulos[i].getStock() + "): ");
-        String sStock = s.next();
-        if (!sStock.isEmpty()) {
-          int stock = s.nextInt();
-          listaArticulos[i].setStock(stock);
-        }
-
+    for (Articulo articulo : listaArticulos) {
+      if (articulo.getCodigo().equals(codigo)) {
         encontrado = true;
+        System.out.println("\nArticulo encontrado: ");
+        System.out.println(articulo);
+
+        System.out.print("\nIntroduce el nuevo precio de compra (0 para no modificar): ");
+        double precioCompra = s.nextDouble();
+        if (precioCompra != 0) {
+          articulo.setPrecioCompra(precioCompra);
+        }
+
+        System.out.print("\nIntroduce el nuevo precio de venta (0 para no modificar): ");
+        double precioVenta = s.nextDouble();
+        if (precioVenta != 0) {
+          articulo.setPrecioVenta(precioVenta);
+        }
+        
+        System.out.print("\nIntroduce el nuevo stock (0 para no modificar): ");
+        int stock = s.nextInt();
+        if (stock != 0) {
+          articulo.setStock(stock);
+        }
+
         System.out.println("\nArticulo modificado correctamente");
+        System.out.println(articulo);
         break;
+        
       }
     }
 
@@ -157,19 +157,19 @@ public class Gestisimal {
 
   }
 
-  static void entradaMercancia() {
+  static void entradaMercancia() { //metodo para introducir mercancia
     System.out.println("\nEntrada de mercancia");
     System.out.print("Introduce el codigo del articulo: ");
     String codigo = s.next();
 
     boolean encontrado = false;
 
-    for (int i = 0; i < numArticulos; i++) {
-      if (listaArticulos[i].getCodigo().equals(codigo)) {
+    for (Articulo articulo : listaArticulos) {
+      if (articulo.getCodigo().equals(codigo)) {
+        encontrado = true;
         System.out.print("Introduce la cantidad a ingresar: ");
         int cantidad = s.nextInt();
-        listaArticulos[i].setStock(listaArticulos[i].getStock() + cantidad);
-        encontrado = true;
+        articulo.setStock(articulo.getStock() + cantidad);;
         System.out.println("\nArticulo ingresado correctamente");
         break;
       }
@@ -180,28 +180,26 @@ public class Gestisimal {
     }
   }
 
-  static void salidaMercancia() {
+  static void salidaMercancia() { //metodo para la salida de mercancia
     System.out.println("\nSalida de mercancia");
     System.out.print("Introduce el codigo del articulo: ");
     String codigo = s.next();
 
     boolean encontrado = false;
 
-    for (int i = 0; i < numArticulos; i++) {
-      if (listaArticulos[i].getCodigo().equals(codigo)) {
+    for (Articulo articulo : listaArticulos) {
+      if (articulo.getCodigo().equals(codigo)) {
         encontrado = true;
 
         System.out.print("Introduce la cantidad a retirar: ");
         int cantidad = s.nextInt();
 
-        if (cantidad > listaArticulos[i].getStock()) {
-          System.out.print("No hay suficiente stock");
-          return;
+        if (cantidad <=articulo.getStock()) {
+          articulo.setStock(articulo.getStock() - cantidad);
+          System.out.println("\nSalida de mercancia correctamente");
+        } else {
+          System.out.println("\nNo hay stock");
         }
-
-        listaArticulos[i].setStock(listaArticulos[i].getStock() - cantidad);
-        System.out.println("Se ha retirado " + cantidad + " articulos");
-        break;
       }
     }
 
@@ -210,7 +208,7 @@ public class Gestisimal {
     }
   }
 
-  static void salir() {
+  static void salir() { //metodo para parar el programa 
     System.out.println("\nHasta pronto");
   }
 
