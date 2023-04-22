@@ -1,3 +1,9 @@
+/*
+ * Ej2_10.java
+ * Ejercico 1 de la relacion de la tarea 10.1
+ * 
+ * @author RSA
+ */
 package T10.T10_2;
 
 import java.util.ArrayList;
