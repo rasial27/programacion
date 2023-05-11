@@ -26,7 +26,7 @@ Introduzca el nombre del segundo personaje:
 <input type="text" name="cadenaIntro2">
 <br>
 <br>
-Introduzca el nombre del tercer personaje:
+Introduzca el nombre del terer personaje:
 <input type="text" name="cadenaIntro3">
 <br>
 <input type="submit" value="OK">
