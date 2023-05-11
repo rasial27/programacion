@@ -1,7 +1,7 @@
 <%-- 
     Document   : index.jsp
     Created on : 11 may. 2023, 19:39:50
-    Author     : radas
+    Author     : RSA
 --%>
 
 <%-- index.jsp (proyecto GatosConClase) --%>
@@ -17,17 +17,19 @@
 <body>
 <h1>Gatos con clase</h1>
 <hr>
-<%
-Gato g1 = new Gato("Pepe", "gato.jpg");
-Gato g2 = new Gato("Garfield", "garfield.jpg");
-Gato g3 = new Gato("Tom", "tom.png");
-out.println(g1);
-out.println(g2);
-out.println(g3);
-out.println(g1.maulla());
-out.println(g2.come("sardinas"));
-%>
-</body
->
-</html
->
+<form method="post" action="frase.jsp">
+Introduzca el nombre del primer personaje:
+<input type="text" name="cadenaIntro1">
+<br>
+<br>
+Introduzca el nombre del segundo personaje:
+<input type="text" name="cadenaIntro2">
+<br>
+<br>
+Introduzca el nombre del tercer personaje:
+<input type="text" name="cadenaIntro3">
+<br>
+<input type="submit" value="OK">
+</form>
+</body>
+</html>
