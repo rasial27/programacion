@@ -11,13 +11,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gatos con clase y bocadillos</title>
+<title>Furbo</title>
 <link rel="stylesheet" type="text/css" href="estilos.css" />
 </head>
 <body>
-<h1>Gatos con clase</h1>
+<h1>Furbo</h1>
 <hr>
-<form method="post" action="frase.jsp">
+<form method="post" action="presentacion.jsp">
 Introduzca el nombre del primer personaje:
 <input type="text" name="cadenaIntro1">
 <br>
@@ -26,7 +26,7 @@ Introduzca el nombre del segundo personaje:
 <input type="text" name="cadenaIntro2">
 <br>
 <br>
-Introduzca el nombre del terer personaje:
+Introduzca el nombre del tercer personaje:
 <input type="text" name="cadenaIntro3">
 <br>
 <input type="submit" value="OK">
